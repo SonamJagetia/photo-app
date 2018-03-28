@@ -15,7 +15,6 @@ class RegistrationsController < Devise::RegistrationsController
           @payment.save
         rescue Exception => e
           flash[:error] = e.message
-
           resource.destroy
           puts 'Payment failed'
           render :new and return
@@ -37,7 +36,7 @@ class RegistrationsController < Devise::RegistrationsController
       end
     end
   end
-  
+
   protected
 
   def configure_permitted_parameters
